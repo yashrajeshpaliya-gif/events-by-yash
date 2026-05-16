@@ -1,135 +1,89 @@
-# index.html
 
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="referrer" content="origin">
-
   <title>Events By Yash</title>
 
   <style>
-
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
 
     body{
-      font-family:Arial, sans-serif;
-      background:linear-gradient(to bottom,#000,#111);
+      background:#fffaf5;
+      color:#222;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#ff9800,#ff5722);
       color:white;
+      padding:80px 20px;
+      text-align:center;
     }
 
-    html{
-      scroll-behavior:smooth;
+    header h1{
+      font-size:48px;
+      margin-bottom:10px;
     }
 
-    .header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px;
-      background:rgba(0,0,0,0.95);
-      backdrop-filter:blur(10px);
-    }
-
-    .logo{
-      font-size:28px;
-      font-weight:bold;
-      color:gold;
+    header p{
+      font-size:20px;
+      margin-bottom:20px;
     }
 
     .btn{
-      background:gold;
-      color:black;
+      display:inline-block;
       padding:12px 25px;
-      border-radius:30px;
+      background:white;
+      color:#ff5722;
       text-decoration:none;
+      border-radius:30px;
       font-weight:bold;
       transition:0.3s;
     }
 
     .btn:hover{
-      transform:scale(1.05);
+      background:#222;
+      color:white;
     }
 
-    .hero{
-      min-height:90vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
+    section{
+      padding:60px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .title{
       text-align:center;
-      padding:20px;
-      animation:fadeIn 2s ease;
-    }
-
-    .hero h1{
-      font-size:60px;
-      margin-bottom:20px;
-      color:gold;
-    }
-
-    .hero p{
-      font-size:24px;
-      color:#ddd;
-    }
-
-    @keyframes fadeIn{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    .section{
-      padding:70px 20px;
-      text-align:center;
-    }
-
-    .section h2{
-      font-size:40px;
       margin-bottom:40px;
-      color:gold;
+      font-size:36px;
+      color:#ff5722;
     }
 
-    .grid{
+    .services{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
+      gap:20px;
     }
 
     .card{
-      background:rgba(255,255,255,0.05);
+      background:white;
+      padding:25px;
       border-radius:20px;
-      padding:30px;
-      transition:0.4s;
-      backdrop-filter:blur(10px);
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      text-align:center;
     }
 
-    .card:hover{
-      transform:translateY(-10px);
-      background:rgba(255,255,255,0.08);
-    }
-
-    .card h3{
-      margin-bottom:15px;
-      color:gold;
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
     }
 
     .gallery img{
@@ -137,20 +91,15 @@
       height:250px;
       object-fit:cover;
       border-radius:20px;
-      transition:0.4s;
-    }
-
-    .gallery img:hover{
-      transform:scale(1.03);
     }
 
     form{
-      max-width:600px;
-      margin:auto;
-      background:rgba(255,255,255,0.05);
+      background:white;
       padding:30px;
       border-radius:20px;
-      backdrop-filter:blur(10px);
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      max-width:700px;
+      margin:auto;
     }
 
     input,
@@ -158,373 +107,121 @@
     textarea{
       width:100%;
       padding:15px;
-      margin:12px 0;
-      border:none;
-      border-radius:12px;
+      margin-bottom:15px;
+      border:1px solid #ddd;
+      border-radius:10px;
       font-size:16px;
     }
 
     button{
       width:100%;
-      padding:16px;
+      padding:15px;
+      background:#ff5722;
+      color:white;
       border:none;
-      border-radius:30px;
-      background:gold;
-      color:black;
+      border-radius:10px;
       font-size:18px;
-      font-weight:bold;
       cursor:pointer;
-      transition:0.3s;
     }
 
     button:hover{
-      transform:scale(1.03);
+      background:#e64a19;
     }
 
-    .contact-box{
+    .contact{
+      text-align:center;
       margin-top:30px;
     }
 
-    .contact-box a{
-      color:gold;
-      text-decoration:none;
-      font-size:20px;
-      display:block;
-      margin:10px 0;
-    }
-
     footer{
+      background:#222;
+      color:white;
       text-align:center;
-      padding:30px;
-      color:#888;
-      border-top:1px solid rgba(255,255,255,0.1);
+      padding:20px;
       margin-top:40px;
     }
-
-    @media(max-width:768px){
-
-      .hero h1{
-        font-size:40px;
-      }
-
-      .hero p{
-        font-size:18px;
-      }
-
-      .section h2{
-        font-size:30px;
-      }
-
-    }
-
   </style>
-
 </head>
-
 <body>
 
-  <div class="header">
+<header>
+  <h1>Events By Yash</h1>
+  <p>Creating Dream Weddings ✨</p>
+  <a href="#booking" class="btn">Book Now</a>
+</header>
 
-    <div class="logo">
-      Events By Yash
+<section>
+  <h2 class="title">Our Services</h2>
+
+  <div class="services">
+    <div class="card">
+      <h3>Wedding Decor</h3>
+      <p>Luxury stage setup and beautiful decoration.</p>
     </div>
 
-    <a href="#booking" class="btn">
-      Book Now
+    <div class="card">
+      <h3>Grand Entry</h3>
+      <p>Royal bride and groom entry planning.</p>
+    </div>
+
+    <div class="card">
+      <h3>Full Planning</h3>
+      <p>Complete wedding management services.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="title">Our Work</h2>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Wedding">
+
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop" alt="Event">
+
+    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="Decoration">
+  </div>
+</section>
+
+<section id="booking">
+  <h2 class="title">Book Your Event</h2>
+
+  <form action="https://formspree.io/f/xrbqagpr" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <select name="event" required>
+      <option value="">Select Event</option>
+      <option>Wedding</option>
+      <option>Haldi</option>
+      <option>Birthday</option>
+      <option>Reception</option>
+      <option>Engagement</option>
+    </select>
+
+    <textarea name="message" rows="5" placeholder="Event Details"></textarea>
+
+    <input type="hidden" name="_next" value="https://yashrajeshpaliya-gif.github.io/events-by-yash/thankyou.html">
+
+    <button type="submit">Submit Booking</button>
+  </form>
+
+  <div class="contact">
+    <br>
+
+    <a class="btn" href="https://wa.me/919289762850" target="_blank">
+      WhatsApp Us
     </a>
-
   </div>
+</section>
 
-  <div class="hero">
-
-    <h1>Creating Dream Weddings ✨</h1>
-
-    <p>
-      Luxury Decor • Grand Entry • Full Event Planning
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Our Services</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Wedding Decor</h3>
-        <p>Luxury stage setup and beautiful decoration.</p>
-      </div>
-
-      <div class="card">
-        <h3>Grand Entry</h3>
-        <p>Royal bride and groom entry planning.</p>
-      </div>
-
-      <div class="card">
-        <h3>Full Planning</h3>
-        <p>Complete wedding management services.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Our Work 🔥</h2>
-
-    <div class="grid gallery">
-
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
-
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
-
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop">
-
-    </div>
-
-  </div>
-
-  <div class="section" id="booking">
-
-    <h2>Book Your Event</h2>
-
-    <form action="https://formspree.io/f/xbdwbzgp" method="POST">
-
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required>
-
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required>
-
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number"
-        required>
-
-      <input
-        type="date"
-        name="date"
-        required>
-
-      <input
-        type="text"
-        name="location"
-        placeholder="Event Location"
-        required>
-
-      <select name="event">
-
-        <option>Wedding</option>
-
-        <option>Haldi</option>
-
-        <option>Birthday</option>
-
-        <option>Reception</option>
-
-        <option>Engagement</option>
-
-      </select>
-
-      <textarea
-        name="requirements"
-        rows="5"
-        placeholder="Tell us your requirements"></textarea>
-
-      <input
-        type="hidden"
-        name="_next"
-        value="https://yashrajeshpaliya-gif.github.io/events-by-yash/thankyou.html">
-
-      <button type="submit">
-
-        Submit Booking
-
-      </button>
-
-    </form>
-
-    <div class="contact-box">
-
-      <a href="https://wa.me/919289762850">
-        WhatsApp Us
-      </a>
-
-      <a href="tel:+919289762850">
-        Call Now
-      </a>
-
-    </div>
-
-  </div>
-
-  <footer>
-
-    © 2026 Events By Yash | All Rights Reserved
-
-  </footer>
+<footer>
+  © 2026 Events By Yash | All Rights Reserved
+</footer>
 
 </body>
-
 </html>
-```
 
----
 
-# thankyou.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Thank You | Events By Yash</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(to bottom,#000,#111);
-font-family:Arial,sans-serif;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-.box{
-background:rgba(255,255,255,0.05);
-padding:50px 30px;
-border-radius:25px;
-max-width:500px;
-width:100%;
-backdrop-filter:blur(10px);
-box-shadow:0 0 30px rgba(255,215,0,0.2);
-animation:fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-h1{
-font-size:55px;
-color:gold;
-margin-bottom:20px;
-}
-
-p{
-font-size:22px;
-color:#ddd;
-margin-bottom:20px;
-line-height:1.6;
-}
-
-a{
-display:inline-block;
-margin-top:20px;
-padding:15px 35px;
-background:gold;
-color:black;
-text-decoration:none;
-font-size:18px;
-font-weight:bold;
-border-radius:30px;
-transition:0.3s;
-}
-
-a:hover{
-transform:scale(1.05);
-}
-
-.small{
-margin-top:25px;
-font-size:16px;
-color:#888;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="box">
-
-<h1>Thank You ❤️</h1>
-
-<p>
-Your booking has been submitted successfully.
-</p>
-
-<p>
-Team <b>Events By Yash</b> will contact you soon.
-</p>
-
-<a href="index.html">
-
-Back To Home
-
-</a>
-
-<div class="small">
-
-Events By Yash © 2026
-
-</div>
-
-</div>
-
-</body>
-
-</html>
-```
-
----
-
-# Ab Kya Karna Hai
-
-1. index.html ka pura purana code delete karo.
-2. Upar wala index.html code paste karo.
-3. thankyou.html naam ki new file banao.
-4. Usme thankyou.html wala code paste karo.
-5. Dono files me Commit Changes dabao.
-6. Formspree email me “Activate Form” dabao.
-7. Website refresh karo.
-
-Uske baad:
-
-* Double form hat jayega
-* Website clean lagegi
-* Form Gmail par aayega
-* Thank You page work karega
-* WhatsApp button bhi chalega
